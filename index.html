@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Technologies | Elite Tech</title>
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="King Tech" class="site-logo-img">
+            <div class="logo-text">KING <span>TECH</span></div>
+        </div>
+        <div class="nav-icons">
+            <a href="#shop-section" class="icon-link">
+                <i data-lucide="shopping-bag"></i>
+                <span>Shop</span>
+            </a>
+            <a href="https://wa.me/251911413518" class="icon-link support-pill">
+                <i data-lucide="help-circle"></i>
+                <span>Support</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Tech from<br>the <span>Future</span></h1>
+        <p>Curated viral gadgets. $0 Shipping Worldwide.</p>
+        <button class="explore-btn" onclick="document.getElementById('shop-section').scrollIntoView()">Explore Drop</button>
+    </section>
+
+    <main class="bento-grid" id="shop-section">
+        <div class="bento-item" onclick="openProduct('wallet')">
+            <img src="wallet-brown.jpg" id="homeImg" class="bento-img">
+            <div class="item-info">
+                <span class="badge yellow">TRENDING</span>
+                <h3>Signature Wallet</h3>
+                <div class="price">$29.99</div>
+            </div>
+        </div>
+
+        <div class="bento-item" onclick="openProduct('eink')">
+            <img src="e-ink1.jpg" class="bento-img">
+            <div class="item-info">
+                <span class="badge white">ULTRA TECH</span>
+                <h3>E-Ink Case</h3>
+                <div class="price">$49.99</div>
+            </div>
+        </div>
+
+        <div class="bento-item yellow-tile">
+            <div class="item-info dark">
+                <i data-lucide="truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>7-12 Days Global</p>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <div class="item-info">
+                <i data-lucide="shield-check" style="color:#ffd700;"></i>
+                <h3>Secure USDT</h3>
+                <p>Direct to Wallet</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Select Style</h3>
+            <img src="wallet-brown.jpg" id="modalPreview" class="modal-photo">
+            <div class="picker-container" id="selectionArea"></div>
+            <button class="buy-now-btn" onclick="showPayment()">BUY NOW</button>
+            <p onclick="closeModal()" class="cancel-text">Cancel</p>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:#ffd700;">Complete Order</h2>
+            <img src="qr-code.png" class="qr-img">
+            <div class="schedule-box">
+                <div class="schedule-header"><div class="status-dot"></div>Order Verification</div>
+                <p class="schedule-days">Mon-Fri: After 7 PM | Sat-Sun: Instant</p>
+            </div>
+            <button class="wa-btn" onclick="sendWhatsApp()">251911413518</button>
+            <p onclick="closeModal()" class="cancel-text">Back</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
